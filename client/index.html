@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html ng-app='techTest'>
+<html>
    <head>
       <title>Tech Test</title>
       <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
       <!-- CSS Files -->
       <link rel="stylesheet" type="text/css" href="styles.css">
-      
+      <link rel="stylesheet" href='/bower_components/angular-bootstrap/ui-bootstrap-csp.css'></script>
       <!-- JS Libaries -->
-      <script src='/bower/angular/angular.min.js'></script>
-      <script src="/bower/angular-ui-router/release/angular-ui-router.min.js"></script>
-      <script src='/bower/angular-ui-bootstrap/dist/ui-bootstrap.js'></script>
+      <script src='/bower_components/angular/angular.min.js'></script>
+      <script src='/bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+      <script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+
       
       <!-- Project Source Files -->
       <script src='./app.js'></script>
-      <script src='./app/tableView/list.js'></script>
-      <script src='./app/cityView/rest.js'></script>
+      <script src='./app/tableView/tableView.js'></script>
+      <script src='./app/cityView/cityView.js'></script>
       <script src='./app/factories.js'></script>
    </head>
-   <body>
-      <!-- UI Router inserts here -->
+   <body ng-app='techTest'>
+      <ui-view></ui-view>
    </body>
 </html>
