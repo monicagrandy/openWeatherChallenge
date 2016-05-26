@@ -1,8 +1,8 @@
-var App = angular.module('techTest', ['ui.router'])
+var App = angular.module('techTest', ['ui.router', 'ui.bootstrap'])
 .config(function($stateProvider, $urlRouterProvider){
   $stateProvider
   .state('cityView', {
-    url: ./city,
+    url: './city',
     templateUrl: './app/cityView/cityView.html',
     controller: 'cityCtrl'
   })
