@@ -1,6 +1,6 @@
 <div id="tableViewWrapper">
 <h1>Add a City</h1>
-<form ng-submit="addNewCity()">
+<form ng-submit="addNew()">
   <h3>Add a new city</h3>
   <input type="text" placeholder="City" ng-model="newCity"></input>
   <button type="submit">Add</button>
@@ -13,7 +13,7 @@
     <th ng-click="sort()">Current Temp</th>
   </tr>
   <tr ng-repeat="city in data">
-    <td>{{city.name}}</td>
+    <td><a ui-sref="cityView" ng-click="transferEvent(city.name)">{{city.name}}</a></td>
     <td>{{city.coord.lat}}</td>
     <td>{{city.coord.lon}}</td>
     <td>{{city.main.temp}}</td>
