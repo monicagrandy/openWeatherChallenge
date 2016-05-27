@@ -5,6 +5,10 @@ App.controller('tableCtrl', function($scope, Data){
     {"coord":{"lon":-71.06,"lat":42.36},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02d"}],"base":"stations","main":{"temp":301.58,"pressure":1017,"humidity":35,"temp_min":296.48,"temp_max":305.15},"visibility":16093,"wind":{"speed":2.87,"deg":124.501},"clouds":{"all":20},"dt":1464287600,"sys":{"type":1,"id":1272,"message":1.3139,"country":"US","sunrise":1464253959,"sunset":1464307843},"id":4930956,"name":"Boston","cod":200}
   ];
 
+  $scope.test = function(){
+    console.log("inside table controller")
+  }
+
   $scope.addNew = function(){
     var newCityName = $scope.newCity
     console.log("tableView line 9: ", $scope.newCity)
@@ -35,5 +39,7 @@ App.controller('tableCtrl', function($scope, Data){
     Data.clickedItem = obj;
     sessionStorage["tempStorage"] = JSON.stringify(obj);
   }
+
+  $scope.test()
 
 })
