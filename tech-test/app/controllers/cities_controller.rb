@@ -67,9 +67,9 @@ class CitiesController < ApplicationController
       render json: @city 
   end
 
-  private
-  def city_params
-    params.require(:city).permit(:city)
-  end
+  # private
+  # def city_params
+  #   params.require(:city).permit(:city)
+  # end
 
 end
