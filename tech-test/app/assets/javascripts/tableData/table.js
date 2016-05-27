@@ -17,7 +17,7 @@ App.controller('tableCtrl', function($scope, Data){
     });
   }
 
-  $scope.cityInfo = function(){
+  $scope.getAllData = function(){
     Data.getAllData(function(fetchedData){
       $scope.data = fetchedData
     })
@@ -35,5 +35,6 @@ App.controller('tableCtrl', function($scope, Data){
   }
 
   $scope.test();
+  $scope.getAllData();
 
 })
