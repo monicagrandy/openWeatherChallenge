@@ -6,11 +6,7 @@ App.factory('Data', function($http){
       url: '/api/fetchData'
     }).then(function success(data){
       console.log(data)
-      var collection = data.data.map(function(city){
-        return {
-          city: city
-        };
-      });
+      var collection = data.data
       cb(collection);
     },
   function error(err) {

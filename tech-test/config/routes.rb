@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   
   resources :cities, only: [:create, :index, :show] 
   
-  post '/api/addNew', to: 'cities#create'   
+  post '/api/addNew', to: 'cities#create'
+
+  get 'api/fetchData', to: 'cities#index'   
  
  
 

@@ -2,10 +2,6 @@ App.controller('tableCtrl', function($scope, Data){
 
   $scope.data = [];
 
-  $scope.test = function(){
-    console.log("inside table controller")
-  }
-
   $scope.addNew = function(){
     var newCityName = $scope.newCity
     console.log("tableView line 9: ", $scope.newCity)
@@ -17,6 +13,7 @@ App.controller('tableCtrl', function($scope, Data){
 
   $scope.getAllData = function(){
     Data.getAllData(function(fetchedData){
+      console.log("fetchedData: ", fetchedData)
       $scope.data = fetchedData
     })
   }
@@ -32,7 +29,6 @@ App.controller('tableCtrl', function($scope, Data){
     sessionStorage["tempStorage"] = JSON.stringify(obj);
   }
 
-  $scope.test();
-  $scope.getAllData();
+$scope.getAllData();
 
 })
