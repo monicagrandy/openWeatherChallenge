@@ -13,10 +13,10 @@
     <th ng-click="sort()">Current Temp</th>
   </tr>
   <tr ng-repeat="city in data">
-    <td><a ui-sref="cityView" ng-click="transferEvent(city.name)">{{city.name}}</a></td>
-    <td>{{city.coord.lat}}</td>
-    <td>{{city.coord.lon}}</td>
-    <td>{{city.main.temp}}</td>
+    <td><a ui-sref="cityView" ng-click="transferEvent(city)">{{city.name}}</a></td>
+    <td>{{city.lat}}</td>
+    <td>{{city.long}}</td>
+    <td>{{city.currTemp}}</td>
   </tr>
   </table>
 </div>

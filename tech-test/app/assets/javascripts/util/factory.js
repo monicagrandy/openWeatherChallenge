@@ -24,31 +24,18 @@ App.factory('Data', function($http){
     method: 'POST',
     url: '/api/addNew',
     data: JSON.stringify(city)
-  }).then(function success(data){
-    cb(data)
-  });
+    }).then(function success(data){
+      var newCity = data.data
+      cb(newCity)
+    });
  };
 
-var getFiveDay = function(cityName, cb){
-  console.log("inside fiveDay: ", cityName)
-  $http({
-    method: 'POST',
-    url: '/api/getForecast',
-    data: cityName
-  }).then(function success(data){
-    return {
-      data: data
-    };
-  });
-  cb(data)
-}; 
 
 var clickedItem = {} 
 
 return {
     getAllData: getAllData,
     addNew: addNew,
-    getFiveDay: getFiveDay,
     clickedItem: clickedItem
   }
 })

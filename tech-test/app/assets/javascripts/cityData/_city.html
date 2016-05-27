@@ -1,33 +1,33 @@
 <div id="cityViewWrapper">
     <h1>5 Day Forecast</h1>
-    <h2>Boston<h2>
+    <h2>{{city}}<h2>
     <table style="width:100%">
     <tr>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
+      <th>{{today.day}}</th>
+      <th>{{tomorrow.day}}</th>
+      <th>{{day3.day}}</th>
+      <th>{{day4.day}}</th>
+      <th>{{day5.day}}</th>
     </tr>
     <tr>
-      <td>few clouds</td>
-      <td>Temperature: 91.4</td>
+      <td>{{today.temp}}s</td>
+      <td>{{today.desc}}</td>
     </tr>
     <tr>
-      <td>few clouds</td>
-      <td>Temperature: 91.4</td>
+      <td>{{tomorrow.temp}}</td>
+      <td>{{tomorrow.desc}}</td>
     </tr>
     <tr>
-      <td>few clouds</td>
-      <td>Temperature: 91.4</td>
+      <td>{{day3.temp}}</td>
+      <td>{{day3.desc}}</td>
     </tr>
      <tr>
-      <td>few clouds</td>
-      <td>Temperature: 91.4</td>
+      <td>{{day4.temp}}</td>
+      <td>{{day4.desc}}</td>
     </tr>
      <tr>
-      <td>few clouds</td>
-      <td>Temperature: 91.4</td>
+      <td>{{day5.temp}}</td>
+      <td>{{day5.desc}}</td>
     </tr>
     </table>
 </div>

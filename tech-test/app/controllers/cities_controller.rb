@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
   require 'open_weather'
+  #respond_to :json
    def index
         # very simple code to grab all posts so they can be
         # displayed in the Index view (index.html.erb)
@@ -14,36 +15,38 @@ class CitiesController < ApplicationController
         # code to create a new post based on the parameters that
         # were submitted with the form (and are now available in the
         # params hash)
-        render :nothing => true
+        #render :nothing => true
         options = { units: "metric", APPID: 'f333c36f17612d7b693745b00991425a' }
         response = OpenWeather::Forecast.city(params['_json'], options)
         city = response['city']
         list = response['list']
-        if City.where(:name => city['name']).blank?
-          newCity = City.new(
-            :name => city['name'], 
-            :lat => city['coord']['lat'], 
-            :long => city['coord']['lon'],
-            :currTemp => list[0]['main']['temp'], 
-            :currDay => list[0]['dt'], 
-            :currDesc => list[0]['weather'][0]['description'],
-            :day2 =>  list[1]['dt'],
-            :temp2 => list[1]['main']['temp'], 
-            :desc2 => list[1]['weather'][0]['description'],
-            :day3 =>  list[2]['dt'],
-            :temp3 => list[2]['main']['temp'], 
-            :desc3 => list[2]['weather'][0]['description'],
-            :day4 =>  list[3]['dt'],
-            :temp4 => list[3]['main']['temp'], 
-            :desc4 => list[3]['weather'][0]['description'],
-            :day5 =>  list[4]['dt'],
-            :temp5 => list[4]['main']['temp'], 
-            :desc5 => list[4]['weather'][0]['description'],
-            )
+        newCity = City.new(
+          :name => city['name'], 
+          :lat => city['coord']['lat'], 
+          :long => city['coord']['lon'],
+          :currTemp => list[0]['main']['temp'], 
+          :currDay => list[0]['dt'], 
+          :currDesc => list[0]['weather'][0]['description'],
+          :day2 =>  list[1]['dt'],
+          :temp2 => list[1]['main']['temp'], 
+          :desc2 => list[1]['weather'][0]['description'],
+          :day3 =>  list[2]['dt'],
+          :temp3 => list[2]['main']['temp'], 
+          :desc3 => list[2]['weather'][0]['description'],
+          :day4 =>  list[3]['dt'],
+          :temp4 => list[3]['main']['temp'], 
+          :desc4 => list[3]['weather'][0]['description'],
+          :day5 =>  list[4]['dt'],
+          :temp5 => list[4]['main']['temp'], 
+          :desc5 => list[4]['weather'][0]['description'],
+          )
+        if City.where(:name => city['name']).blank?  
           newCity.save
         else
           puts "city has already been added" 
-        end   
+        end 
+          @city = newCity
+          render json: @city 
       end
 
       private
