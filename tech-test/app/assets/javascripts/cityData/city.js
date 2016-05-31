@@ -6,16 +6,16 @@ App.controller('cityCtrl', function($scope, Data) {
   }
 
   var makeDay = function(time){
-    console.log("inside make day")
+    console.log("inside make day ", time)
     var d = new Date(time*1000);
     var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     var dayOfWeek = days[d.getDay()]
-   return dayOfWeek 
+    console.log(dayOfWeek)
+   return dayOfWeek
   }
 
   if (Data.clickedItem) {
-    console.log("this is the clicked item: ", Data.clickedItem)
-    $scope.city = Data.clickedItem.name
+    $scope.city = Data.clickedItem
     $scope.today = {
       day: makeDay(Data.clickedItem.currDay),
       temp: Data.clickedItem.currTemp,
@@ -31,7 +31,7 @@ App.controller('cityCtrl', function($scope, Data) {
       temp: Data.clickedItem.temp3,
       desc: Data.clickedItem.desc3
     }
-    $scope.day4 ={
+    $scope.day4 = {
       day: makeDay(Data.clickedItem.day4),
       temp: Data.clickedItem.temp4,
       desc: Data.clickedItem.desc4

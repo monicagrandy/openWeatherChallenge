@@ -6,11 +6,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root to: 'application#angular'
   
-  resources :cities, only: [:create, :index, :show] 
-  
-  post '/api/addNew', to: 'cities#create'
+  post '/api/addNew', to: 'cities#addNewCity'
 
-  get 'api/fetchData', to: 'cities#index'   
+  get 'api/fetchData', to: 'cities#findAndUpdate'   
  
  
 

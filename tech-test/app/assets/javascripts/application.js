@@ -3,4 +3,5 @@
 //= require angular-ui-router
 //= require angular-bootstrap
 //= require angular-moment
+//= require moment
 //= require_tree .

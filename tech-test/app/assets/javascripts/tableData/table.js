@@ -12,6 +12,7 @@ App.controller('tableCtrl', function($scope, Data){
   }
 
   $scope.getAllData = function(){
+    console.log("calling getAllData")
     Data.getAllData(function(fetchedData){
       console.log("fetchedData: ", fetchedData)
       $scope.data = fetchedData

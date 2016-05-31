@@ -12,6 +12,7 @@ App.config(function($stateProvider, $urlRouterProvider){
     controller: 'tableCtrl'
   })
   $urlRouterProvider.otherwise('tableView');
+
 })
 
 
