@@ -21,7 +21,7 @@ App.controller('tableCtrl', function($scope, Data){
 
   $scope.sort = function(){
     $scope.data.sort(function(a,b){
-      return a.main.temp - b.main.temp
+      return b.currTemp - a.currTemp
     })
   }
 

@@ -14,6 +14,13 @@ App.factory('Data', function($http){
   })
 };
 
+var makeDay = function(time){
+  var d = new Date(time*1000);
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var dayOfWeek = days[d.getDay()]
+  return dayOfWeek
+};
+
  var addNew = function(city, cb){
   console.log("inside addNew: ", city)
   $http({
@@ -30,6 +37,7 @@ App.factory('Data', function($http){
 var clickedItem = {} 
 
 return {
+    makeDay: makeDay,
     getAllData: getAllData,
     addNew: addNew,
     clickedItem: clickedItem
