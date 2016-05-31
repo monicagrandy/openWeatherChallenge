@@ -1,16 +1,21 @@
 <div id="tableViewWrapper">
   <h1>Current Weather</h1>
   <form ng-submit="addNew()">
-  <h3>Add a new city</h3>
-  <input type="text" placeholder="City" ng-model="newCity"></input>
-  <button type="submit" class="btn btn-primary" ng-model="submitBtn" btn-checkbox>Add</button>
+    <h3>Add a new city</h3>
+    <input type="text" placeholder="City" ng-model="newCity"></input>
+    <button type="submit">Add</button>
   </form>
+  <hr>
   <table style="width:100%">
   <tr>
-    <th>Name</th>
-    <th>Lat</th>
-    <th>Long</th>
-    <th ng-click="sort()">Current Temp</th>
+    <td><h3>Name</h3></td>
+    <br>
+    <td><h3>Lat</h3></td>
+    <br>
+    <td><h3>Long</h3></td>
+    <br>
+    <td ng-click="sort()"><h3>Current Temp^</h3></td>
+    <br>
   </tr>
   <tr ng-repeat="city in data">
     <td><a ui-sref="cityView" ng-click="transferEvent(city)">{{city.name}}</a></td>

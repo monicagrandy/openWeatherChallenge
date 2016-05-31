@@ -1,5 +1,5 @@
 //= require angular
 //= require angular-rails-templates
 //= require angular-ui-router
-//= require angular-bootstrap
+//= require angular-ui-bootstrap-tpls
 //= require_tree .
