@@ -4,6 +4,7 @@ App.controller('tableCtrl', function($scope, Data){
 
   $scope.addNew = function(){
     var newCityName = $scope.newCity
+    $scope.newCity = ""
     console.log("tableView line 9: ", $scope.newCity)
     Data.addNew(newCityName, function(cityData){
       console.log("on line 16! ", cityData)
